@@ -1,0 +1,45 @@
+"========DEIN Configuration============
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('~/.vim/dein')
+  call dein#begin('~/.vim/dein')
+  " Loading Toml
+  call dein#load_toml('~/vimfiles/.vim/rc/dein.toml', {'lazy': 0})
+  call dein#load_toml('~/vimfiles/.vim/rc/dein_lazy.toml', {'lazy': 1})
+  " Finished dein setting
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"========SYSTEM Configuration===========
+" カラースキーマ
+colorscheme onedark
+" 行番号を表示する
+set number
+" 右下に表示される行・列の番号を表示する
+set ruler
+" Ctrl + hjkl でウィンドウ間を移動
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" Shift + 矢印でウィンドウサイズを変更
+nnoremap <S-Left>  <C-w><<CR>
+nnoremap <S-Right> <C-w>><CR>
+nnoremap <S-Up>    <C-w>-<CR>
+nnoremap <S-Down>  <C-w>+<CR>
+" 行列を強調表示
+set cursorline
+set cursorcolumn
+" スワップファイルを無効
+set noswapfile
+"=======================================

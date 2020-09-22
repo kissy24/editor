@@ -1,0 +1,34 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+hook_add = '''
+  let g:airline_theme = 'jellybeans'
+  set laststatus=2
+  set showtabline=2
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#buffer_idx_mode = 1
+  '''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  nnoremap <silent><C-e> :NERDTreeToggle<CR>
+  '''
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_add = '''
+  nnoremap <silent><leader>t :TagbarToggle<CR>
+  '''

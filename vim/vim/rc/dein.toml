@@ -1,0 +1,91 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo ='KeitaNakamura/highlighter.nvim'
+hook_add = '''
+  let g:highlighter#syntax_python = [
+      \ { 'hlgroup'       : 'HighlighterPythonFunction',
+      \   'hlgroup_link'  : 'Function',
+      \   'tagkinds'      : 'f',
+      \   'syntax_type'   : 'match',
+      \   'syntax_suffix' : '(\@=',
+      \ },
+      \ { 'hlgroup'       : 'HighlighterPythonMethod',
+      \   'hlgroup_link'  : 'Function',
+      \   'tagkinds'      : 'm',
+      \   'syntax_type'   : 'match',
+      \   'syntax_prefix' : '\.\@<=',
+      \ },
+      \ { 'hlgroup'       : 'HighlighterPythonClass',
+      \   'hlgroup_link'  : 'Type',
+      \   'tagkinds'      : 'c',
+      \ }]
+  let g:highlighter#auto_update = 2
+'''
+
+[[plugins]]
+repo = 'kissy24/Twinight'
+
+[[plugins]]
+repo = 'kissy24/Dusky'
+hook_add = '''
+  au MyAutoCmd VimEnter * nested colorscheme dusky
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+hook_add = '''
+  let g:airline_theme = 'tomorrow'
+  let g:airline_left_sep = '⮀'
+  let g:airline_left_alt_sep = '⮁'
+  let g:airline_right_sep = '⮂'
+  let g:airline_right_alt_sep = '⮃'
+  set laststatus=2
+  set showtabline=2
+  let g:airline#extensions#tabline#enabled = 1
+  '''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  nnoremap <silent><C-e> :NERDTreeToggle<CR>
+  '''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+    nnoremap [figitive] <Nop>
+    nnoremap <Leader>g [figitive]
+    nnoremap <silent> [figitive]s :<C-u>Gstatus<CR>
+    nnoremap <silent> [figitive]d :<C-u>Gdiff<CR>
+    nnoremap <silent> [figitive]b :<C-u>Gblame<CR>
+'''
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['vim-fugitive']
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+[[plugins]]
+repo = 'godlygeek/tabular'
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+depends = ['tabular']
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'posva/vim-vue'
